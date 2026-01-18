@@ -34,122 +34,111 @@ const AboutSection = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="mb-8 bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div className="flex flex-col lg:flex-row items-center">
-          {/* Text Content - Left Side */}
-          <div className="flex-1 p-4 md:p-6 lg:p-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Our Mission</h2>
-            <div className="space-y-2 text-gray-700 leading-relaxed">
-              <p className="text-sm md:text-base">
-                To deliver exceptional construction solutions that exceed client expectations, emphasizing quality, safety, and innovation.
-              </p>
-              <p className="text-xs md:text-sm">
-                We are committed to transforming landscapes and improving communities through sustainable and precise engineering.
+      {/* Mission & Vision Section - Separate Boxes */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+        {/* Mission - Left Side */}
+        <section className="bg-white rounded-2xl shadow-xl overflow-hidden p-6 md:p-8 lg:p-10 hover:shadow-2xl transition-shadow duration-300">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+              <i className="fas fa-bullseye text-white"></i>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Our Mission</h2>
+          </div>
+          <div className="space-y-3 text-gray-700 leading-relaxed">
+            <p className="text-sm md:text-base">
+              To be the construction industry's premier choice, renowned for delivering innovative, sustainable, and iconic projects that enrich communities, inspire progress, and leave a lasting legacy of excellence.
+            </p>
+          </div>
+        </section>
+
+        {/* Vision - Right Side */}
+        <section className="bg-white rounded-2xl shadow-xl overflow-hidden p-6 md:p-8 lg:p-10 hover:shadow-2xl transition-shadow duration-300">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i className="fas fa-eye text-white"></i>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Our Vision</h2>
+          </div>
+          <div className="space-y-3 text-gray-700 leading-relaxed">
+            <p className="text-sm md:text-base font-semibold text-primary mb-2">
+              Building a Sustainable Future!
+            </p>
+            <p className="text-sm md:text-base">
+              Our Vision is to be the Leading Construction Company in Delivering Innovative and Eco-Friendly Solutions for a Better World.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      {/* Core Values Section */}
+      <section className="mt-16 md:mt-20 relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl overflow-hidden">
+        {/* Background Image - Faded on Left */}
+        <div 
+          className="absolute left-0 top-0 bottom-0 w-full md:w-1/3 bg-cover bg-center bg-no-repeat opacity-10"
+          style={{
+            backgroundImage: `url('/image/new-house-construction-building-site_293060-52.jpg')`
+          }}
+        ></div>
+        
+        <div className="relative z-10 p-8 md:p-12 lg:p-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Left Side - Title & Intro */}
+            <div className="lg:col-span-1">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 relative pb-4">
+                Core Values
+                <span className="absolute bottom-0 left-0 w-24 h-0.5 bg-gray-300"></span>
+              </h2>
+              <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                These core values guide us in every decision we make and reflect our unwavering commitment to excellence, ethics, and responsible engineering and construction practices.
               </p>
             </div>
-          </div>
 
-          {/* Illustration - Right Side */}
-          <div className="flex-1 bg-gradient-to-br from-blue-50 to-primary/10 p-4 md:p-6 lg:p-8 flex items-center justify-center min-h-[250px] md:min-h-[280px]">
-            <svg viewBox="0 0 400 400" className="w-full h-full max-w-md">
-              {/* Background Circles */}
-              <circle cx="200" cy="200" r="180" fill="none" stroke="#0099ff" strokeWidth="2" opacity="0.2" />
-              <circle cx="200" cy="200" r="140" fill="none" stroke="#0099ff" strokeWidth="1.5" opacity="0.15" />
-              
-              {/* Construction Icons */}
-              {/* Building/Structure Icon */}
-              <g transform="translate(150, 100)">
-                <rect x="0" y="40" width="100" height="80" fill="#0099ff" opacity="0.8" rx="4" />
-                <rect x="15" y="60" width="20" height="25" fill="white" rx="2" />
-                <rect x="50" y="60" width="20" height="25" fill="white" rx="2" />
-                <rect x="65" y="85" width="20" height="25" fill="white" rx="2" />
-                <polygon points="0,40 50,10 100,40" fill="#187cff" opacity="0.9" />
-              </g>
+            {/* Right Side - Values List */}
+            <div className="lg:col-span-2 space-y-6 md:space-y-8">
+              {/* Integrity */}
+              <div className="flex gap-4 items-start">
+                <div className="w-3 h-3 bg-primary flex-shrink-0 mt-2"></div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">Integrity</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    We uphold the highest ethical standards in all our interactions, ensuring honesty, transparency, and accountability in every aspect of our work.
+                  </p>
+                </div>
+              </div>
 
-              {/* Checkmark/Quality Icon */}
-              <g transform="translate(80, 280)">
-                <circle cx="30" cy="30" r="25" fill="#0099ff" />
-                <path d="M20 30 L28 38 L40 22" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              </g>
+              {/* Safety */}
+              <div className="flex gap-4 items-start">
+                <div className="w-3 h-3 bg-primary flex-shrink-0 mt-2"></div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">Safety</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    The well-being of our employees, partners, and communities is paramount. We prioritize safety in all construction practices, creating secure environments for everyone involved.
+                  </p>
+                </div>
+              </div>
 
-              {/* Gear/Innovation Icon */}
-              <g transform="translate(280, 80)">
-                <circle cx="30" cy="30" r="25" fill="#0099ff" opacity="0.8" />
-                <circle cx="30" cy="30" r="12" fill="white" />
-                <rect x="28" y="10" width="4" height="12" fill="white" rx="2" />
-                <rect x="28" y="38" width="4" height="12" fill="white" rx="2" />
-                <rect x="10" y="28" width="12" height="4" fill="white" rx="2" />
-                <rect x="38" y="28" width="12" height="4" fill="white" rx="2" />
-                <rect x="18" y="18" width="6" height="6" fill="white" rx="1" transform="rotate(45 21 21)" />
-                <rect x="36" y="18" width="6" height="6" fill="white" rx="1" transform="rotate(45 39 21)" />
-                <rect x="18" y="36" width="6" height="6" fill="white" rx="1" transform="rotate(45 21 39)" />
-                <rect x="36" y="36" width="6" height="6" fill="white" rx="1" transform="rotate(45 39 39)" />
-              </g>
+              {/* Quality */}
+              <div className="flex gap-4 items-start">
+                <div className="w-3 h-3 bg-primary flex-shrink-0 mt-2"></div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">Quality</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    We are committed to delivering exceptional craftsmanship and uncompromising quality in every project we undertake, meeting or exceeding industry standards.
+                  </p>
+                </div>
+              </div>
 
-              {/* Connecting Lines */}
-              <line x1="200" y1="180" x2="110" y2="290" stroke="#0099ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.4" />
-              <line x1="310" y1="110" x2="200" y2="180" stroke="#0099ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.4" />
-              <line x1="310" y1="110" x2="110" y2="290" stroke="#0099ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.3" />
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      {/* Vision Section */}
-      <section className="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div className="flex flex-col lg:flex-row-reverse items-center">
-          {/* Text Content - Right Side (visual left) */}
-          <div className="flex-1 p-4 md:p-6 lg:p-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Our Vision</h2>
-            <div className="space-y-2 text-gray-700 leading-relaxed">
-              <p className="text-sm md:text-base">
-                To be the leading construction company in Pakistan, recognized for unparalleled craftsmanship, technological innovation, and a relentless commitment to client satisfaction.
-              </p>
-              <p className="text-xs md:text-sm">
-                We aim to shape the future of urban and rural infrastructure.
-              </p>
+              {/* Professionalism */}
+              <div className="flex gap-4 items-start">
+                <div className="w-3 h-3 bg-primary flex-shrink-0 mt-2"></div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">Professionalism</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    Our commitment to professionalism shines through in every aspect of our work, from our appearance and conduct to the timely delivery of projects.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Illustration - Left Side (visual right) */}
-          <div className="flex-1 bg-gradient-to-bl from-orange-50 to-yellow-50 p-4 md:p-6 lg:p-8 flex items-center justify-center min-h-[250px] md:min-h-[280px]">
-            <svg viewBox="0 0 400 400" className="w-full h-full max-w-md">
-              {/* Background Pattern */}
-              <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0099ff" strokeWidth="1" opacity="0.1" />
-                </pattern>
-              </defs>
-              <rect width="400" height="400" fill="url(#grid)" />
-
-              {/* Vision/Eye Icon - Central */}
-              <g transform="translate(200, 150)">
-                <circle cx="0" cy="0" r="60" fill="#ffa500" opacity="0.2" />
-                <circle cx="0" cy="0" r="40" fill="none" stroke="#ffa500" strokeWidth="3" opacity="0.4" />
-                <path d="M-30,-10 Q-15,-25 0,-10 Q15,-25 30,-10 Q15,10 0,15 Q-15,10 -30,-10" fill="#ffa500" opacity="0.6" />
-                <circle cx="0" cy="0" r="12" fill="#ff6600" />
-                <circle cx="0" cy="0" r="6" fill="white" />
-              </g>
-
-              {/* Growth/Arrow Icon */}
-              <g transform="translate(100, 280)">
-                <path d="M0 40 L20 20 L15 20 L15 0 L25 0 L25 20 L30 20 Z" fill="#0099ff" opacity="0.8" />
-                <circle cx="5" cy="35" r="3" fill="#ffa500" />
-                <circle cx="25" cy="15" r="3" fill="#ffa500" />
-              </g>
-
-              {/* Star/Excellence Icon */}
-              <g transform="translate(280, 100)">
-                <polygon points="30,5 35,20 50,20 38,30 42,45 30,35 18,45 22,30 10,20 25,20" fill="#ffa500" opacity="0.8" />
-                <circle cx="30" cy="25" r="8" fill="white" />
-              </g>
-
-              {/* Connecting Lines */}
-              <line x1="200" y1="150" x2="130" y2="300" stroke="#ffa500" strokeWidth="2" strokeDasharray="5,5" opacity="0.4" />
-              <line x1="310" y1="120" x2="200" y2="150" stroke="#ffa500" strokeWidth="2" strokeDasharray="5,5" opacity="0.4" />
-              <line x1="310" y1="120" x2="130" y2="300" stroke="#0099ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.3" />
-            </svg>
           </div>
         </div>
       </section>

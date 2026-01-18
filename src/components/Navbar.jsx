@@ -51,12 +51,14 @@ const Navbar = () => {
           <li className="md:ml-8">
             <Link 
               to="/" 
-              className={`text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-1.5 ${
+              className={`text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-2 ${
                 location.pathname === '/' ? 'text-primary' : ''
               }`}
               onClick={closeMenu}
             >
-              <i className="fas fa-home text-sm"></i>
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-home text-sm text-white"></i>
+              </span>
               Home
             </Link>
           </li>
@@ -66,11 +68,13 @@ const Navbar = () => {
             onMouseLeave={() => setIsCompanyDropdownOpen(false)}
           >
             <button 
-              className={`text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-1.5 ${
+              className={`text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-2 ${
                 ['/team', '/careers'].includes(location.pathname) || location.hash === '#About' ? 'text-primary' : ''
               }`}
             >
-              <i className="fas fa-building text-sm"></i>
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-building text-sm text-white"></i>
+              </span>
               Company
               <i className={`fas fa-chevron-${isCompanyDropdownOpen ? 'up' : 'down'} text-xs transition-transform duration-300`}></i>
             </button>
@@ -81,44 +85,52 @@ const Navbar = () => {
                 {location.pathname === '/' ? (
                   <a 
                     href="#About" 
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200 flex items-center gap-2"
                     onClick={closeMenu}
                   >
-                    <i className="fas fa-info-circle mr-2 text-blue-500"></i>
+                    <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <i className="fas fa-info-circle text-xs text-white"></i>
+                    </span>
                     About
                   </a>
                 ) : (
                   <Link
                     to="/#About"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200 flex items-center gap-2"
                     onClick={closeMenu}
                   >
-                    <i className="fas fa-info-circle mr-2 text-blue-500"></i>
+                    <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <i className="fas fa-info-circle text-xs text-white"></i>
+                    </span>
                     About
                   </Link>
                 )}
                 <Link
                   to="/team"
-                  className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                  className={`block px-4 py-2 text-sm transition-colors duration-200 flex items-center gap-2 ${
                     location.pathname === '/team'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-users mr-2 text-green-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-users text-xs text-white"></i>
+                  </span>
                   Our Team
                 </Link>
                 <Link
                   to="/careers"
-                  className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                  className={`block px-4 py-2 text-sm transition-colors duration-200 flex items-center gap-2 ${
                     location.pathname === '/careers'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-briefcase mr-2 text-purple-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-briefcase text-xs text-white"></i>
+                  </span>
                   Careers
                 </Link>
               </div>
@@ -130,11 +142,13 @@ const Navbar = () => {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <button 
-              className={`text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-1.5 ${
+              className={`text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-2 ${
                 ['/privacy-policy', '/terms-of-service', '/faq'].includes(location.pathname) ? 'text-primary' : ''
               }`}
             >
-              <i className="fas fa-balance-scale text-sm"></i>
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-balance-scale text-sm text-white"></i>
+              </span>
               Legal & Support
               <i className={`fas fa-chevron-${isDropdownOpen ? 'up' : 'down'} text-xs transition-transform duration-300`}></i>
             </button>
@@ -144,38 +158,44 @@ const Navbar = () => {
               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
                 <Link
                   to="/privacy-policy"
-                  className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                  className={`block px-4 py-2 text-sm transition-colors duration-200 flex items-center gap-2 ${
                     location.pathname === '/privacy-policy'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-shield-alt mr-2 text-blue-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-shield-alt text-xs text-white"></i>
+                  </span>
                   Privacy Policy
                 </Link>
                 <Link
                   to="/terms-of-service"
-                  className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                  className={`block px-4 py-2 text-sm transition-colors duration-200 flex items-center gap-2 ${
                     location.pathname === '/terms-of-service'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-file-contract mr-2 text-teal-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-file-contract text-xs text-white"></i>
+                  </span>
                   Terms of Service
                 </Link>
                 <Link
                   to="/faq"
-                  className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                  className={`block px-4 py-2 text-sm transition-colors duration-200 flex items-center gap-2 ${
                     location.pathname === '/faq'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-question-circle mr-2 text-amber-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-question-circle text-xs text-white"></i>
+                  </span>
                   FAQ
                 </Link>
               </div>
@@ -184,12 +204,14 @@ const Navbar = () => {
           <li className="md:ml-8">
             <Link 
               to="/services" 
-              className={`text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-1.5 ${
+              className={`text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-2 ${
                 location.pathname === '/services' ? 'text-primary' : ''
               }`}
               onClick={closeMenu}
             >
-              <i className="fas fa-briefcase text-sm"></i>
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-briefcase text-sm text-white"></i>
+              </span>
               Services
             </Link>
           </li>
@@ -197,19 +219,23 @@ const Navbar = () => {
             {location.pathname === '/' ? (
               <a 
                 href="#Project" 
-                className="text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-1.5"
+                className="text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-2"
                 onClick={closeMenu}
               >
-                <i className="fas fa-project-diagram text-sm"></i>
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-project-diagram text-sm text-white"></i>
+              </span>
                 Projects
               </a>
             ) : (
               <Link
                 to="/#Project"
-                className="text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-1.5"
+                className="text-gray-800 font-medium transition-colors duration-300 hover:text-primary flex items-center gap-2"
                 onClick={closeMenu}
               >
-                <i className="fas fa-project-diagram text-sm"></i>
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-project-diagram text-sm text-white"></i>
+              </span>
                 Projects
               </Link>
             )}
@@ -218,19 +244,23 @@ const Navbar = () => {
             {location.pathname === '/' ? (
               <a 
                 href="#Contact" 
-                className="bg-primary text-white px-5 py-2.5 rounded font-semibold transition-colors duration-300 hover:bg-primary-dark flex items-center gap-1.5"
+                className="bg-primary text-white px-5 py-2.5 rounded font-semibold transition-colors duration-300 hover:bg-primary-dark flex items-center gap-2"
                 onClick={closeMenu}
               >
-                <i className="fas fa-envelope text-sm"></i>
+                <span className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center">
+                  <i className="fas fa-envelope text-sm text-white"></i>
+                </span>
                 Contact Us
               </a>
             ) : (
               <Link
                 to="/#Contact"
-                className="bg-primary text-white px-5 py-2.5 rounded font-semibold transition-colors duration-300 hover:bg-primary-dark flex items-center gap-1.5"
+                className="bg-primary text-white px-5 py-2.5 rounded font-semibold transition-colors duration-300 hover:bg-primary-dark flex items-center gap-2"
                 onClick={closeMenu}
               >
-                <i className="fas fa-envelope text-sm"></i>
+                <span className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center">
+                  <i className="fas fa-envelope text-sm text-white"></i>
+                </span>
                 Contact Us
               </Link>
             )}
@@ -271,14 +301,18 @@ const Navbar = () => {
         <li className="mb-4 w-full">
           <Link 
             to="/" 
-            className={`flex items-center py-3 px-4 text-base font-medium rounded-lg transition-colors ${
+            className={`flex items-center py-3 px-4 text-base font-medium rounded-lg transition-colors gap-3 ${
               location.pathname === '/' 
                 ? 'bg-primary text-white' 
                 : 'text-gray-800 hover:bg-gray-100'
             }`}
             onClick={closeMenu}
           >
-            <i className="fas fa-home mr-3"></i>
+            <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 shadow-md transition-all duration-300 ${
+              location.pathname === '/' ? 'bg-white/20' : 'bg-primary hover:shadow-lg hover:scale-110'
+            }`}>
+              <i className="fas fa-home text-sm text-white"></i>
+            </span>
             Home
           </Link>
         </li>
@@ -287,8 +321,10 @@ const Navbar = () => {
             onClick={() => setIsMobileCompanyDropdownOpen(!isMobileCompanyDropdownOpen)}
             className="flex items-center justify-between w-full py-3 px-4 text-base font-medium text-gray-800 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <div className="flex items-center">
-              <i className="fas fa-building mr-3 text-blue-500"></i>
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-building text-sm text-white"></i>
+              </span>
               <span>Company</span>
             </div>
             <i className={`fas fa-chevron-${isMobileCompanyDropdownOpen ? 'up' : 'down'} text-xs transition-transform duration-300`}></i>
@@ -299,19 +335,23 @@ const Navbar = () => {
                 {location.pathname === '/' ? (
                   <a 
                     href="#About" 
-                    className="flex items-center py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                    className="flex items-center py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition-colors gap-2"
                     onClick={closeMenu}
                   >
-                    <i className="fas fa-info-circle mr-2 text-blue-500"></i>
+                    <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <i className="fas fa-info-circle text-xs text-white"></i>
+                    </span>
                     About
                   </a>
                 ) : (
                   <Link
                     to="/#About"
-                    className="flex items-center py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                    className="flex items-center py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition-colors gap-2"
                     onClick={closeMenu}
                   >
-                    <i className="fas fa-info-circle mr-2 text-blue-500"></i>
+                    <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <i className="fas fa-info-circle text-xs text-white"></i>
+                    </span>
                     About
                   </Link>
                 )}
@@ -319,28 +359,32 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/team"
-                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors ${
+                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors gap-2 ${
                     location.pathname === '/team'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-users mr-2 text-green-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-users text-xs text-white"></i>
+                  </span>
                   Our Team
                 </Link>
               </li>
               <li>
                 <Link
                   to="/careers"
-                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors ${
+                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors gap-2 ${
                     location.pathname === '/careers'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-briefcase mr-2 text-purple-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-briefcase text-xs text-white"></i>
+                  </span>
                   Careers
                 </Link>
               </li>
@@ -352,8 +396,10 @@ const Navbar = () => {
             onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
             className="flex items-center justify-between w-full py-3 px-4 text-base font-medium text-gray-800 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <div className="flex items-center">
-              <i className="fas fa-balance-scale mr-3 text-purple-500"></i>
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-balance-scale text-sm text-white"></i>
+              </span>
               <span>Legal & Support</span>
             </div>
             <i className={`fas fa-chevron-${isMobileDropdownOpen ? 'up' : 'down'} text-xs transition-transform duration-300`}></i>
@@ -363,42 +409,48 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/privacy-policy"
-                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors ${
+                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors gap-2 ${
                     location.pathname === '/privacy-policy'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-shield-alt mr-2 text-blue-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-shield-alt text-xs text-white"></i>
+                  </span>
                   Privacy Policy
                 </Link>
               </li>
               <li>
                 <Link
                   to="/terms-of-service"
-                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors ${
+                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors gap-2 ${
                     location.pathname === '/terms-of-service'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-file-contract mr-2 text-teal-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-file-contract text-xs text-white"></i>
+                  </span>
                   Terms of Service
                 </Link>
               </li>
               <li>
                 <Link
                   to="/faq"
-                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors ${
+                  className={`flex items-center py-2 px-3 rounded-lg text-sm transition-colors gap-2 ${
                     location.pathname === '/faq'
                       ? 'bg-blue-50 text-primary font-semibold'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                   onClick={closeMenu}
                 >
-                  <i className="fas fa-question-circle mr-2 text-amber-500"></i>
+                  <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <i className="fas fa-question-circle text-xs text-white"></i>
+                  </span>
                   FAQ
                 </Link>
               </li>
@@ -408,14 +460,18 @@ const Navbar = () => {
         <li className="mb-4 w-full">
           <Link 
             to="/services" 
-            className={`flex items-center py-3 px-4 text-base font-medium rounded-lg transition-colors ${
+            className={`flex items-center py-3 px-4 text-base font-medium rounded-lg transition-colors gap-3 ${
               location.pathname === '/services' 
                 ? 'bg-primary text-white' 
                 : 'text-gray-800 hover:bg-gray-100'
             }`}
             onClick={closeMenu}
           >
-            <i className="fas fa-briefcase mr-3"></i>
+            <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 shadow-md transition-all duration-300 ${
+              location.pathname === '/services' ? 'bg-white/20' : 'bg-primary hover:shadow-lg hover:scale-110'
+            }`}>
+              <i className="fas fa-briefcase text-sm text-white"></i>
+            </span>
             Services
           </Link>
         </li>
@@ -423,19 +479,23 @@ const Navbar = () => {
           {location.pathname === '/' ? (
             <a 
               href="#Project" 
-              className="flex items-center py-3 px-4 text-base font-medium text-gray-800 rounded-lg hover:bg-gray-100 transition-colors"
+              className="flex items-center py-3 px-4 text-base font-medium text-gray-800 rounded-lg hover:bg-gray-100 transition-colors gap-3"
               onClick={closeMenu}
             >
-              <i className="fas fa-project-diagram mr-3 text-orange-500"></i>
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-project-diagram text-sm text-white"></i>
+              </span>
               Projects
             </a>
           ) : (
             <Link
               to="/#Project"
-              className="flex items-center py-3 px-4 text-base font-medium text-gray-800 rounded-lg hover:bg-gray-100 transition-colors"
+              className="flex items-center py-3 px-4 text-base font-medium text-gray-800 rounded-lg hover:bg-gray-100 transition-colors gap-3"
               onClick={closeMenu}
             >
-              <i className="fas fa-project-diagram mr-3 text-orange-500"></i>
+              <span className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
+                <i className="fas fa-project-diagram text-sm text-white"></i>
+              </span>
               Projects
             </Link>
           )}
@@ -444,19 +504,23 @@ const Navbar = () => {
           {location.pathname === '/' ? (
             <a 
               href="#Contact" 
-              className="flex items-center justify-center w-full bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors shadow-md"
+              className="flex items-center justify-center w-full bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors shadow-md gap-2"
               onClick={closeMenu}
             >
-              <i className="fas fa-envelope mr-2"></i>
+              <span className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center shadow-sm">
+                <i className="fas fa-envelope text-sm text-white"></i>
+              </span>
               Contact Us
             </a>
           ) : (
             <Link
               to="/#Contact"
-              className="flex items-center justify-center w-full bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors shadow-md"
+              className="flex items-center justify-center w-full bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors shadow-md gap-2"
               onClick={closeMenu}
             >
-              <i className="fas fa-envelope mr-2"></i>
+              <span className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center shadow-sm">
+                <i className="fas fa-envelope text-sm text-white"></i>
+              </span>
               Contact Us
             </Link>
           )}

@@ -6,7 +6,6 @@ const HeroSection = () => {
   const projectsCountRef = useRef(null)
   const yearsCountRef = useRef(null)
   const clientsCountRef = useRef(null)
-  const awardsCountRef = useRef(null)
 
   // Background images array
   const backgroundImages = [
@@ -64,7 +63,6 @@ const HeroSection = () => {
             animateCounter(projectsCountRef, 100, '+')
             animateCounter(yearsCountRef, 25)
             animateCounter(clientsCountRef, 100, '+')
-            animateCounter(awardsCountRef, 20)
             observer.disconnect()
           }
         })
@@ -126,12 +124,6 @@ const HeroSection = () => {
             </span>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 text-white leading-tight animate-fade-in-up">
-            Building Dreams,<br />
-            <span className="text-primary">Shaping Futures</span>
-          </h1>
-          
           {/* Subtitle */}
           <div className="mb-4 md:mb-6 animate-fade-in-up-delay-1">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white/95 mb-2">
@@ -144,8 +136,8 @@ const HeroSection = () => {
           
           {/* Description */}
           <p className="text-sm sm:text-base md:text-lg mb-6 md:mb-8 leading-relaxed text-white/85 animate-fade-in-up-delay-1 max-w-2xl">
-            Turning your vision into reality with precision engineering and expert craftsmanship. 
-            Over 25 years of excellence in construction, design, and planning.
+            We are a company of highly qualified engineers & certified technicians dedicated 
+            to meet the diverse needs of our clients across multiple sectors.
           </p>
           
           {/* CTA Buttons */}
@@ -157,55 +149,45 @@ const HeroSection = () => {
               <i className="fas fa-paper-plane"></i>
               Get a Quote
             </Link>
-            <Link
-              to="/#Project"
+            <a
+              href="#Project"
               className="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-6 md:px-8 lg:px-10 py-3 md:py-4 text-sm md:text-base lg:text-lg font-semibold rounded-lg uppercase transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 hover:shadow-xl w-full sm:w-auto text-center flex items-center justify-center gap-2"
             >
               <i className="fas fa-building"></i>
               Our Projects
-            </Link>
+            </a>
           </div>
           
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8 animate-fade-in-up-delay-3">
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 md:p-4 lg:p-6 border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center mb-2">
-                <i className="fas fa-project-diagram text-white text-xs md:text-sm lg:text-base"></i>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mb-6 md:mb-8 animate-fade-in-up-delay-3">
+            <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 md:p-3 lg:p-4 border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 bg-primary rounded-lg flex items-center justify-center mb-1.5">
+                <i className="fas fa-project-diagram text-white text-xs md:text-xs lg:text-sm"></i>
               </div>
-              <div ref={projectsCountRef} className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-1">
+              <div ref={projectsCountRef} className="text-lg md:text-xl lg:text-2xl font-bold text-primary mb-0.5">
               0
               </div>
-              <div className="text-xs md:text-sm text-white/90 font-medium leading-tight">Projects Completed</div>
+              <div className="text-[10px] md:text-xs text-white/90 font-medium leading-tight">Projects Completed</div>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 md:p-4 lg:p-6 border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center mb-2">
-                <i className="fas fa-calendar-alt text-white text-xs md:text-sm lg:text-base"></i>
+            <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 md:p-3 lg:p-4 border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 bg-primary rounded-lg flex items-center justify-center mb-1.5">
+                <i className="fas fa-calendar-alt text-white text-xs md:text-xs lg:text-sm"></i>
               </div>
-              <div ref={yearsCountRef} className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-1">
+              <div ref={yearsCountRef} className="text-lg md:text-xl lg:text-2xl font-bold text-primary mb-0.5">
               0
               </div>
-              <div className="text-xs md:text-sm text-white/90 font-medium leading-tight">Years of Experience</div>
+              <div className="text-[10px] md:text-xs text-white/90 font-medium leading-tight">Years of Experience</div>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 md:p-4 lg:p-6 border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center mb-2">
-                <i className="fas fa-users text-white text-xs md:text-sm lg:text-base"></i>
+            <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 md:p-3 lg:p-4 border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 bg-primary rounded-lg flex items-center justify-center mb-1.5">
+                <i className="fas fa-users text-white text-xs md:text-xs lg:text-sm"></i>
               </div>
-              <div ref={clientsCountRef} className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-1">
+              <div ref={clientsCountRef} className="text-lg md:text-xl lg:text-2xl font-bold text-primary mb-0.5">
               0
               </div>
-              <div className="text-xs md:text-sm text-white/90 font-medium leading-tight">Happy Clients</div>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 md:p-4 lg:p-6 border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center mb-2">
-                <i className="fas fa-trophy text-white text-xs md:text-sm lg:text-base"></i>
-              </div>
-              <div ref={awardsCountRef} className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-1">
-              0
-              </div>
-              <div className="text-xs md:text-sm text-white/90 font-medium leading-tight">Awards Won</div>
+              <div className="text-[10px] md:text-xs text-white/90 font-medium leading-tight">Happy Clients</div>
             </div>
           </div>
 
